@@ -1,47 +1,106 @@
 <!DOCTYPE html>
 <html lang="ru">
- <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Семестровая работа</title>
-<link rel="stylesheet" href="../style.css">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Семестровая работа</title>
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../modaldialog.css">
 
 
- </head>
- <body>
- <div class="page-container">
+</head>
+
+<body>
+  <div class="page-container">
     <div class="header">Хэдер</div>
- <div class="nav">
- <ul class="nav-list">
-<li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-<li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-<li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-<li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-<li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
- </ul>
- </div>
-  <div class="content">
-    <div class="contacts-header">
-      <h1 class="page-title">Контакты</h1>
+    <div class="nav">
+      <ul class="nav-list">
+        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+        <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+        <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+      </ul>
     </div>
-    
-    <div class="contact-info">
-      <div class="contact-item">
-        <h3 class="contact-title">📧 Электронная почта</h3>
-        <p class="contact-value">damirxxl_XXl@mail.ru</p>
+    <div class="content">
+      <div class="contacts-header">
+        <h1 class="page-title">Контакты</h1>
       </div>
-      
-      <div class="contact-item">
-        <h3 class="contact-title">📍 Адрес</h3>
-        <p class="contact-value">далекие края</p>
-      </div>
-      
-      <div class="contact-actions">
-        <button class="contact-button">позвоните мне</button>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <h3 class="contact-title">📧 Электронная почта</h3>
+          <p class="contact-value">damirxxl_XXl@mail.ru</p>
+        </div>
+
+        <div class="contact-item">
+          <h3 class="contact-title">📍 Адрес</h3>
+          <p class="contact-value">далекие края</p>
+        </div>
+
+        <div class="contact-actions">
+          <button class="contact-button">позвоните мне</button>
+
+          <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
+        </div>
+
       </div>
     </div>
+
+    <div class="footer">Футер</div>
+    <dialog id="contactModal">
+      <div class="modal-header">
+        <h2>Форма обратной связи</h2>
+      </div>
+
+      <div class="modal-content">
+        <form id="feedbackForm" method="dialog">
+          <div class="form-group">
+            <label for="name">Имя <span class="required">*</span>
+            </label>
+            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+          </div>
+          <div class="form-group">
+            <label for="phone">Телефон <span class="required">*
+              </span></label>
+            <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+          </div>
+          <div class="form-group">
+            <label for="email">Электронная почта <span class="required">*</span></label>
+            <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+          </div>
+          <div class="form-group">
+            <label for="category">Категория обращения <span class="required">*</span></label>
+            <select id="category" name="category" required>
+              <option value="">Выберите категорию</option>
+              <option value="technical">Техническая
+                поддержка</option>
+              <option value="commercial">Коммерческое
+                предложение</option>
+              <option value="cooperation">Сотрудничество</option>
+              <option value="complaint">Жалоба</option>
+              <option value="suggestion">Предложение</option>
+              <option value="other">Другое</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Текст обращения <span class="required">*</span></label>
+            <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+          </div>
+          <div class="modal-actions">
+            <!-- Кнопка отмены с автоматическим закрытием через
+form method="dialog" -->
+            <button type="submit" class="btn btnsecondary">Отмена</button>
+            <!-- Кнопка отправки с обработкой через JavaScript -->
+            <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+          </div>
+        </form>
+      </div>
+    </dialog>
   </div>
- <div class="footer">Футер</div> 
- </div>
- </body>
+  <script src="../src/modal.js"></script>
+
+</body>
+
 </html>
