@@ -5,9 +5,22 @@
 
   function applyTheme(theme) {
     if (theme === 'dark') {
-      root.classList.add('theme--dark');
+      root.setAttribute('data-bs-theme', 'dark');
+      // Обновляем иконку кнопки
+      updateButtonIcon('moon');
     } else {
-      root.classList.remove('theme--dark');
+      root.setAttribute('data-bs-theme', 'light');
+      // Обновляем иконку кнопки
+      updateButtonIcon('sun');
+    }
+  }
+
+  function updateButtonIcon(iconType) {
+    if (btn) {
+      const icon = btn.querySelector('i');
+      if (icon) {
+        icon.className = iconType === 'moon' ? 'bi bi-moon' : 'bi bi-sun';
+      }
     }
   }
 
@@ -16,7 +29,7 @@
 
   if (btn) {
     btn.addEventListener('click', () => {
-      const current = root.classList.contains('theme--dark') ? 'dark' : 'light';
+      const current = root.getAttribute('data-bs-theme') || 'light';
       const next = current === 'dark' ? 'light' : 'dark';
       applyTheme(next);
       localStorage.setItem(KEY, next);
