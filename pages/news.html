@@ -2,55 +2,59 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Новости</title>
-  <link rel="stylesheet" href="../style.css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новости</title>
+    <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
-  <div class="page-container">
-    <div class="header">Хэдер</div>
-    <div class="nav">
-      <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-        <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-        <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-      </ul>
-    </div>
-    <div class="content">
-      <div class="news-header">
-        <h1 class="page-title">Новости</h1>
-      </div>
+<div class="page">
+    <header class="header">
+        <button class="theme-switch" id="themeSwitch" type="button">Переключить тему</button>
+        <h1 class="header__title">Моё портфолио</h1>
+    </header>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+            <li class="nav__item nav__item--active"><a class="nav__link" href="news.html">Новости</a></li>
+            <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+            <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+            <li class="nav__item"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <div class="news__header">
+            <h1 class="page__title">Новости</h1>
+        </div>
 
-      <div class="news-container">
-        <article class="news-item">
-          <h2 class="news-title">Важные обновления</h2>
-          <div class="news-meta">
-            <span class="news-date">24 сентября 2025</span>
-            <span class="news-author">Автор: Дамир Ахмеров</span>
-          </div>
-          <p class="news-content">Сегодня мы представляем новую версию нашего сайта с улучшенным дизайном и
-            функциональностью. Обновления включают современный интерфейс и лучшую производительность.</p>
-        </article>
+        <div class="news__container">
+            <article class="news__item">
+                <h2 class="news__item__title">Важные обновления</h2>
+                <div class="news__item__meta">
+                    <span class="news__item__date">24 сентября 2025</span>
+                    <span class="news__item__author">Автор: Дамир Ахмеров</span>
+                </div>
+                <p class="news__item__content">Сегодня мы представляем новую версию нашего сайта с улучшенным дизайном и
+                    функциональностью. Обновления включают современный интерфейс и лучшую производительность.</p>
+            </article>
 
-        <article class="news-item">
-          <h2 class="news-title">Новые возможности</h2>
-          <div class="news-meta">
-            <span class="news-date">20 сентября 2025</span>
-            <span class="news-author">Автор: Дамир Ахмеров</span>
-          </div>
-          <p class="news-content">Добавлены новые функции для улучшения пользовательского опыта. Теперь навигация стала
-            еще более удобной и интуитивной.</p>
-        </article>
-      </div>
-    </div>
-    <div class="footer">Футер</div>
-  </div>
+            <article class="news__item">
+                <h2 class="news__item__title">Новые возможности</h2>
+                <div class="news__item__meta">
+                    <span class="news__item__date">20 сентября 2025</span>
+                    <span class="news__item__author">Автор: Дамир Ахмеров</span>
+                </div>
+                <p class="news__item__content">Добавлены новые функции для улучшения пользовательского опыта. Теперь навигация стала
+                    еще более удобной и интуитивной.</p>
+            </article>
+        </div>
+    </main>
+    <footer class="footer">
+        <p class="footer__text">Футер</p>
+    </footer>
+</div>
+<script src="../src/theme.js"></script>
 </body>
 
 </html>

@@ -2,105 +2,104 @@
 <html lang="ru">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Семестровая работа</title>
-  <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="../modaldialog.css">
-
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Семестровая работа</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../modaldialog.css">
 </head>
 
 <body>
-  <div class="page-container">
-    <div class="header">Хэдер</div>
-    <div class="nav">
-      <ul class="nav-list">
-        <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
-        <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
-        <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
-        <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
-        <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
-      </ul>
-    </div>
-    <div class="content">
-      <div class="contacts-header">
-        <h1 class="page-title">Контакты</h1>
-      </div>
-
-      <div class="contact-info">
-        <div class="contact-item">
-          <h3 class="contact-title">📧 Электронная почта</h3>
-          <p class="contact-value">damirxxl_XXl@mail.ru</p>
+<div class="page">
+    <header class="header">
+        <button class="theme-switch" id="themeSwitch" type="button">Переключить тему</button>
+        <h1 class="header__title">Моё портфолио</h1>
+    </header>
+    <nav class="nav">
+        <ul class="nav__list">
+            <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
+            <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
+            <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
+            <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
+            <li class="nav__item nav__item--active"><a class="nav__link" href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+        <main class="content">
+        <div class="contacts__header">
+            <h1 class="page__title">Контакты</h1>
         </div>
 
-        <div class="contact-item">
-          <h3 class="contact-title">📍 Адрес</h3>
-          <p class="contact-value">далекие края</p>
-        </div>
+        <section class="contacts__info">
+            <div class="contacts__item">
+                <h3 class="contacts__item__title">📧 Электронная почта</h3>
+                <p class="contacts__item__value">damirxxl_XXl@mail.ru</p>
+            </div>
 
-        <div class="contact-actions">
-          <button class="contact-button">позвоните мне</button>
+            <div class="contacts__item">
+                <h3 class="contacts__item__title">📍 Адрес</h3>
+                <p class="contacts__item__value">далекие края</p>
+            </div>
 
-          <button class="contact-button" onclick="contactModal.showModal()">Связаться с нами</button>
-        </div>
+            <div class="contacts__actions">
+                <button class="contacts__button">позвоните мне</button>
+                <button class="contacts__button" onclick="contactModal.showModal()">Связаться с нами</button>
+            </div>
 
-      </div>
-    </div>
+        </section>
+    </main>
 
-    <div class="footer">Футер</div>
+    <footer class="footer">
+        <p class="footer__text">© 2024 Все права защищены. Контактная информация</p>
+    </footer>
+
+    <!-- Модальное окно для формы обратной связи -->
     <dialog id="contactModal">
-      <div class="modal-header">
-        <h2>Форма обратной связи</h2>
-      </div>
+        <div class="modal-header">
+            <h2>Форма обратной связи</h2>
+        </div>
 
-      <div class="modal-content">
-        <form id="feedbackForm" method="dialog">
-          <div class="form-group">
-            <label for="name">Имя <span class="required">*</span>
-            </label>
-            <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
-          </div>
-          <div class="form-group">
-            <label for="phone">Телефон <span class="required">*
-              </span></label>
-            <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
-          </div>
-          <div class="form-group">
-            <label for="email">Электронная почта <span class="required">*</span></label>
-            <input type="email" id="email" name="email" required placeholder="example@mail.ru">
-          </div>
-          <div class="form-group">
-            <label for="category">Категория обращения <span class="required">*</span></label>
-            <select id="category" name="category" required>
-              <option value="">Выберите категорию</option>
-              <option value="technical">Техническая
-                поддержка</option>
-              <option value="commercial">Коммерческое
-                предложение</option>
-              <option value="cooperation">Сотрудничество</option>
-              <option value="complaint">Жалоба</option>
-              <option value="suggestion">Предложение</option>
-              <option value="other">Другое</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="message">Текст обращения <span class="required">*</span></label>
-            <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
-          </div>
-          <div class="modal-actions">
-            <!-- Кнопка отмены с автоматическим закрытием через
-form method="dialog" -->
-            <button type="submit" class="btn btnsecondary">Отмена</button>
-            <!-- Кнопка отправки с обработкой через JavaScript -->
-            <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
-          </div>
-        </form>
-      </div>
+        <div class="modal-content">
+            <form id="feedbackForm" method="dialog">
+                <div class="form-group">
+                    <label for="name">Имя <span class="required">*</span></label>
+                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Телефон <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                </div>
+                <div class="form-group">
+                    <label for="email">Электронная почта <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
+                </div>
+                <div class="form-group">
+                    <label for="category">Категория обращения <span class="required">*</span></label>
+                    <select id="category" name="category" required>
+                        <option value="">Выберите категорию</option>
+                        <option value="technical">Техническая поддержка</option>
+                        <option value="commercial">Коммерческое предложение</option>
+                        <option value="cooperation">Сотрудничество</option>
+                        <option value="complaint">Жалоба</option>
+                        <option value="suggestion">Предложение</option>
+                        <option value="other">Другое</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="message">Текст обращения <span class="required">*</span></label>
+                    <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                </div>
+                <div class="modal-actions">
+                    <!-- Кнопка отмены с автоматическим закрытием через form method="dialog" -->
+                    <button type="submit" class="btn btn-secondary">Отмена</button>
+                    <!-- Кнопка отправки с обработкой через JavaScript -->
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
+                </div>
+            </form>
+        </div>
     </dialog>
-  </div>
-  <script src="../src/modal.js"></script>
-
+</div>
+<script src="../src/theme.js"></script>
+<script src="../src/modal.js"></script>
 </body>
 
 </html>

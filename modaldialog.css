@@ -5,7 +5,7 @@
 
  dialog {
      border: none;
-     border-radius: 12px;
+     border-radius: var(--radius, 12px);
      padding: 0;
      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
      animation: slideIn 0.3s ease;
@@ -13,19 +13,21 @@
      width: 90vw;
      max-height: 90vh;
      overflow-y: auto;
+     background: var(--color-surface, #fff);
+     color: var(--color-text, #2c3e50);
  }
 
  .modal-header {
-     background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-     color: white;
+     background: linear-gradient(135deg, var(--color-main, #2c3e50) 0%, var(--color-dark, #34495e) 100%);
+     color: var(--color-white, #fff);
      padding: 1.5rem;
-     border-radius: 12px 12px 0 0;
+     border-radius: var(--radius, 12px) var(--radius, 12px) 0 0;
      margin: 0;
  }
 
  .modal-header h2 {
      margin: 0;
-     color: white;
+     color: var(--color-white, #fff);
      font-size: 1.5rem;
  }
 
@@ -41,7 +43,7 @@
      display: block;
      margin-bottom: 0.5rem;
      font-weight: 600;
-     color: #2c3e50;
+     color: var(--color-main, #2c3e50);
  }
 
  .form-group input,
@@ -54,13 +56,15 @@
      font-size: 1rem;
      transition: border-color 0.3s ease;
      box-sizing: border-box;
+     background: var(--color-surface, #fff);
+     color: var(--color-text, #2c3e50);
  }
 
  .form-group input:focus,
  .form-group select:focus,
  .form-group textarea:focus {
      outline: none;
-     border-color: #667eea;
+     border-color: var(--color-accent, #667eea);
  }
 
  .form-group textarea {
@@ -86,8 +90,8 @@
  }
 
  .btn-primary {
-     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-     color: white;
+     background: linear-gradient(135deg, var(--color-accent, #667eea) 0%, var(--color-hover, #764ba2) 100%);
+     color: var(--color-white, #fff);
  }
 
  .btn-primary:hover {
@@ -96,8 +100,8 @@
  }
 
  .btn-secondary {
-     background: #f8f9fa;
-     color: #2c3e50;
+     background: var(--color-surface-2, #f8f9fa);
+     color: var(--color-main, #2c3e50);
      border: 2px solid #e9ecef;
  }
 
@@ -105,9 +109,7 @@
      background: #e9ecef;
  }
 
- .required {
-     color: #e74c3c;
- }
+ .required { color: #e74c3c; }
 
  @keyframes fadeIn {
      from {
