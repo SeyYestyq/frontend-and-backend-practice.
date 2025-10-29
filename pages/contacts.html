@@ -1,105 +1,298 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семестровая работа</title>
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../modaldialog.css">
+    <title>Контакты - Портфолио</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 </head>
+<body class="bg-light">
+    <div class="container-fluid p-0">
+        <!-- Header -->
+        <header class="bg-primary text-white py-4">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col">
+                        <h1 class="h3 mb-1">Моё Портфолио</h1>
+                        <p class="mb-0 opacity-75">Студент разработчик</p>
+                    </div>
+                    <div class="col-auto">
+                        <span class="badge bg-light text-primary">ЭФБО-13-24</span>
+                        <button class="btn btn-outline-light btn-sm ms-2" id="themeSwitch" type="button">
+                            <i class="bi bi-sun"></i> Тема
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </header>
 
-<body>
-<div class="page">
-    <header class="header">
-        <button class="theme-switch" id="themeSwitch" type="button">Переключить тему</button>
-        <h1 class="header__title">Моё портфолио</h1>
-    </header>
-    <nav class="nav">
-        <ul class="nav__list">
-            <li class="nav__item"><a class="nav__link" href="../index.html">Главная</a></li>
-            <li class="nav__item"><a class="nav__link" href="news.html">Новости</a></li>
-            <li class="nav__item"><a class="nav__link" href="practices.html">Практики</a></li>
-            <li class="nav__item"><a class="nav__link" href="goods.html">Товары</a></li>
-            <li class="nav__item nav__item--active"><a class="nav__link" href="contacts.html">Контакты</a></li>
-        </ul>
-    </nav>
-        <main class="content">
-        <div class="contacts__header">
-            <h1 class="page__title">Контакты</h1>
-        </div>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../index.html">
+                                <i class="bi bi-house me-1"></i>Главная
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="news.html">
+                                <i class="bi bi-newspaper me-1"></i>Новости
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="practices.html">
+                                <i class="bi bi-code-slash me-1"></i>Практики
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="goods.html">
+                                <i class="bi bi-cart me-1"></i>Товары
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="contacts.html">
+                                <i class="bi bi-telephone me-1"></i>Контакты
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-        <section class="contacts__info">
-            <div class="contacts__item">
-                <h3 class="contacts__item__title">📧 Электронная почта</h3>
-                <p class="contacts__item__value">damirxxl_XXl@mail.ru</p>
+        <!-- Main Content -->
+        <main class="container my-4">
+            <!-- Page Header -->
+            <div class="row mb-4">
+                <div class="col">
+                    <h1 class="h2 text-primary mb-1">
+                        <i class="bi bi-telephone me-2"></i>Контакты
+                    </h1>
+                    <p class="text-muted mb-0">Свяжитесь со мной любым удобным способом</p>
+                </div>
             </div>
 
-            <div class="contacts__item">
-                <h3 class="contacts__item__title">📍 Адрес</h3>
-                <p class="contacts__item__value">далекие края</p>
+            <div class="row g-4">
+                <!-- Contact Information -->
+                <div class="col-lg-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-primary text-white">
+                            <h5 class="mb-0">
+                                <i class="bi bi-person-lines-fill me-2"></i>Контактная информация
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <!-- Email -->
+                            <div class="d-flex align-items-center mb-4 p-3 bg-light rounded">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-primary text-white rounded-circle p-3">
+                                        <i class="bi bi-envelope-fill fs-4"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">📧 Электронная почта</h6>
+                                    <p class="mb-0 text-muted">damirxxl_XXl@mail.ru</p>
+                                    <a href="mailto:damirxxl_XXl@mail.ru" class="btn btn-outline-primary btn-sm mt-2">
+                                        <i class="bi bi-send me-1"></i>Написать письмо
+                                    </a>
+                                </div>
+                            </div>
+
+                            <!-- Address -->
+                            <div class="d-flex align-items-center mb-4 p-3 bg-light rounded">
+                                <div class="flex-shrink-0">
+                                    <div class="bg-success text-white rounded-circle p-3">
+                                        <i class="bi bi-geo-alt-fill fs-4"></i>
+                                    </div>
+                                </div>
+                                <div class="flex-grow-1 ms-3">
+                                    <h6 class="mb-1">📍 Адрес</h6>
+                                    <p class="mb-0 text-muted">далекие края</p>
+                                    <button class="btn btn-outline-success btn-sm mt-2">
+                                        <i class="bi bi-map me-1"></i>Показать на карте
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Action Buttons -->
+                            <div class="d-grid gap-2">
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-telephone-fill me-2"></i>позвоните мне
+                                </button>
+                                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#contactModal">
+                                    <i class="bi bi-chat-dots-fill me-2"></i>Связаться с нами
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Contact Form -->
+                <div class="col-lg-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-header bg-success text-white">
+                            <h5 class="mb-0">
+                                <i class="bi bi-chat-square-text me-2"></i>Быстрая связь
+                            </h5>
+                        </div>
+                        <div class="card-body">
+                            <form>
+                                <div class="mb-3">
+                                    <label for="quickName" class="form-label">Ваше имя</label>
+                                    <input type="text" class="form-control" id="quickName" placeholder="Введите ваше имя">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="quickEmail" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="quickEmail" placeholder="example@mail.ru">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="quickMessage" class="form-label">Сообщение</label>
+                                    <textarea class="form-control" id="quickMessage" rows="4" placeholder="Ваше сообщение..."></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-success">
+                                        <i class="bi bi-send me-2"></i>Отправить сообщение
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="contacts__actions">
-                <button class="contacts__button">позвоните мне</button>
-                <button class="contacts__button" onclick="contactModal.showModal()">Связаться с нами</button>
+            <!-- Social Links -->
+            <div class="row mt-4">
+                <div class="col">
+                    <div class="card shadow-sm">
+                        <div class="card-header bg-info text-white text-center">
+                            <h5 class="mb-0">
+                                <i class="bi bi-share me-2"></i>Социальные сети
+                            </h5>
+                        </div>
+                        <div class="card-body text-center">
+                            <div class="row justify-content-center">
+                                <div class="col-auto">
+                                    <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                                        <i class="bi bi-telegram me-1"></i>Telegram
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="#" class="btn btn-outline-info me-2 mb-2">
+                                        <i class="bi bi-twitter me-1"></i>Twitter
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="#" class="btn btn-outline-primary me-2 mb-2">
+                                        <i class="bi bi-linkedin me-1"></i>LinkedIn
+                                    </a>
+                                </div>
+                                <div class="col-auto">
+                                    <a href="#" class="btn btn-outline-dark mb-2">
+                                        <i class="bi bi-github me-1"></i>GitHub
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+        </main>
 
-        </section>
-    </main>
+        <!-- Footer -->
+        <footer class="bg-dark text-white py-4 mt-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <p class="mb-0">© 2024 Все права защищены. Контактная информация</p>
+                    </div>
+                    <div class="col-md-6 text-md-end">
+                        <a href="#" class="text-white text-decoration-none me-3">Политика конфиденциальности</a>
+                        <a href="#" class="text-white text-decoration-none">Условия использования</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 
-    <footer class="footer">
-        <p class="footer__text">© 2024 Все права защищены. Контактная информация</p>
-    </footer>
-
-    <!-- Модальное окно для формы обратной связи -->
-    <dialog id="contactModal">
-        <div class="modal-header">
-            <h2>Форма обратной связи</h2>
+    <!-- Modal for Contact Form -->
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="contactModalLabel">
+                        <i class="bi bi-envelope me-2"></i>Форма обратной связи
+                    </h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="feedbackForm">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="name" class="form-label">Имя <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="name" name="name" required placeholder="Введите ваше имя">
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label">Телефон <span class="text-danger">*</span></label>
+                                    <input type="tel" class="form-control" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Электронная почта <span class="text-danger">*</span></label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="example@mail.ru">
+                        </div>
+                        <div class="mb-3">
+                            <label for="category" class="form-label">Категория обращения <span class="text-danger">*</span></label>
+                            <select class="form-select" id="category" name="category" required>
+                                <option value="">Выберите категорию</option>
+                                <option value="technical">Техническая поддержка</option>
+                                <option value="commercial">Коммерческое предложение</option>
+                                <option value="cooperation">Сотрудничество</option>
+                                <option value="complaint">Жалоба</option>
+                                <option value="suggestion">Предложение</option>
+                                <option value="other">Другое</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Текст обращения <span class="text-danger">*</span></label>
+                            <textarea class="form-control" id="message" name="message" rows="4" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                        <i class="bi bi-x-circle me-1"></i>Отмена
+                    </button>
+                    <button type="button" class="btn btn-primary" onclick="submitForm()">
+                        <i class="bi bi-send me-1"></i>Отправить
+                    </button>
+                </div>
+            </div>
         </div>
+    </div>
 
-        <div class="modal-content">
-            <form id="feedbackForm" method="dialog">
-                <div class="form-group">
-                    <label for="name">Имя <span class="required">*</span></label>
-                    <input type="text" id="name" name="name" required placeholder="Введите ваше имя">
-                </div>
-                <div class="form-group">
-                    <label for="phone">Телефон <span class="required">*</span></label>
-                    <input type="tel" id="phone" name="phone" required placeholder="+7 (XXX) XXX-XX-XX">
-                </div>
-                <div class="form-group">
-                    <label for="email">Электронная почта <span class="required">*</span></label>
-                    <input type="email" id="email" name="email" required placeholder="example@mail.ru">
-                </div>
-                <div class="form-group">
-                    <label for="category">Категория обращения <span class="required">*</span></label>
-                    <select id="category" name="category" required>
-                        <option value="">Выберите категорию</option>
-                        <option value="technical">Техническая поддержка</option>
-                        <option value="commercial">Коммерческое предложение</option>
-                        <option value="cooperation">Сотрудничество</option>
-                        <option value="complaint">Жалоба</option>
-                        <option value="suggestion">Предложение</option>
-                        <option value="other">Другое</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="message">Текст обращения <span class="required">*</span></label>
-                    <textarea id="message" name="message" required placeholder="Опишите вашу проблему или вопрос..."></textarea>
-                </div>
-                <div class="modal-actions">
-                    <!-- Кнопка отмены с автоматическим закрытием через form method="dialog" -->
-                    <button type="submit" class="btn btn-secondary">Отмена</button>
-                    <!-- Кнопка отправки с обработкой через JavaScript -->
-                    <button type="button" class="btn btn-primary" onclick="submitForm()">Отправить</button>
-                </div>
-            </form>
-        </div>
-    </dialog>
-</div>
-<script src="../src/theme.js"></script>
-<script src="../src/modal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../src/theme.js"></script>
+    <script>
+        function submitForm() {
+            // Здесь можно добавить логику отправки формы
+            alert('Форма отправлена! Спасибо за обращение.');
+            
+            // Закрыть модальное окно
+            const modal = bootstrap.Modal.getInstance(document.getElementById('contactModal'));
+            modal.hide();
+            
+            // Очистить форму
+            document.getElementById('feedbackForm').reset();
+        }
+    </script>
 </body>
-
 </html>
