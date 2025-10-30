@@ -1,21 +1,19 @@
-// Filter Projects - Фильтрация проектов по категориям
+
 document.addEventListener('DOMContentLoaded', function() {
     const filterButtons = document.querySelectorAll('.filter-btn');
     const projectItems = document.querySelectorAll('.project-item');
     
     if (filterButtons.length === 0 || projectItems.length === 0) {
-        return; // Выйти, если элементы не найдены
+        return; 
     }
     
     filterButtons.forEach(button => {
         button.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
-            
-            // Обновить активную кнопку
+
             filterButtons.forEach(btn => btn.classList.remove('active'));
             this.classList.add('active');
-            
-            // Фильтровать проекты
+
             projectItems.forEach(item => {
                 const category = item.getAttribute('data-category');
                 
@@ -35,8 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
-    // Анимация появления карточек при загрузке
+
     projectItems.forEach((item, index) => {
         setTimeout(() => {
             item.style.opacity = '1';

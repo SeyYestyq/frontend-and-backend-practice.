@@ -1,27 +1,24 @@
-// Diary Form - Обработка формы добавления записей в дневник
+
 document.addEventListener('DOMContentLoaded', function() {
     const diaryForm = document.getElementById('diaryForm');
     
     if (!diaryForm) {
-        return; // Выйти, если форма не найдена
+        return; 
     }
     
     diaryForm.addEventListener('submit', function(e) {
         e.preventDefault();
-        
-        // Получить значения из формы
+ 
         const date = document.getElementById('entryDate').value;
         const title = document.getElementById('entryTitle').value;
         const description = document.getElementById('entryDescription').value;
         const status = document.getElementById('entryStatus').value;
-        
-        // Проверить, что все поля заполнены
+
         if (!date || !title || !description || !status) {
             alert('Пожалуйста, заполните все поля');
             return;
         }
-        
-        // Создать новую запись
+
         const entry = {
             date: date,
             title: title,
@@ -30,22 +27,22 @@ document.addEventListener('DOMContentLoaded', function() {
             id: Date.now()
         };
         
-        // Сохранить в localStorage
+
         let entries = JSON.parse(localStorage.getItem('diaryEntries') || '[]');
-        entries.unshift(entry); // Добавить в начало массива
+        entries.unshift(entry); 
         localStorage.setItem('diaryEntries', JSON.stringify(entries));
         
-        // Добавить запись в DOM
+
         addEntryToTimeline(entry);
         
-        // Очистить форму
+
         diaryForm.reset();
         
-        // Показать сообщение об успехе
+
         showSuccessMessage('Запись успешно добавлена!');
     });
     
-    // Функция добавления записи в timeline
+
     function addEntryToTimeline(entry) {
         const timeline = document.querySelector('.timeline');
         if (!timeline) return;
@@ -70,7 +67,7 @@ document.addEventListener('DOMContentLoaded', function() {
         timeline.insertAdjacentHTML('afterbegin', entryHTML);
     }
     
-    // Функция форматирования даты
+
     function formatDate(dateString) {
         const date = new Date(dateString);
         const day = date.getDate();
@@ -79,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return `${day} ${month}`;
     }
     
-    // Функция показа сообщения об успехе
+
     function showSuccessMessage(message) {
         const alert = document.createElement('div');
         alert.className = 'alert alert-success alert-dismissible fade show mt-3';
@@ -90,19 +87,18 @@ document.addEventListener('DOMContentLoaded', function() {
         
         diaryForm.parentElement.insertBefore(alert, diaryForm.nextSibling);
         
-        // Автоматически скрыть через 3 секунды
+
         setTimeout(() => {
             alert.classList.remove('show');
             setTimeout(() => alert.remove(), 150);
         }, 3000);
     }
     
-    // Загрузить сохраненные записи при загрузке страницы
+
     function loadSavedEntries() {
         const entries = JSON.parse(localStorage.getItem('diaryEntries') || '[]');
         entries.forEach(entry => {
-            // Добавить только новые записи (созданные пользователем)
-            // Проверить, чтобы не дублировать записи, которые уже есть в HTML
+
         });
     }
     

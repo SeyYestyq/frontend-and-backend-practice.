@@ -1,23 +1,19 @@
-// Contact Form Validation - Валидация контактной формы
+
 document.addEventListener('DOMContentLoaded', function() {
     const contactForm = document.getElementById('contactForm');
     
     if (!contactForm) {
-        return; // Выйти, если форма не найдена
+        return; 
     }
-    
-    // Bootstrap validation
     contactForm.addEventListener('submit', function(event) {
         event.preventDefault();
         event.stopPropagation();
-        
-        // Проверить валидность формы
+
         if (!contactForm.checkValidity()) {
             contactForm.classList.add('was-validated');
             return;
         }
-        
-        // Получить данные формы
+
         const formData = {
             name: document.getElementById('name').value,
             email: document.getElementById('email').value,
@@ -25,33 +21,28 @@ document.addEventListener('DOMContentLoaded', function() {
             timestamp: new Date().toISOString()
         };
         
-        // Сохранить в localStorage (для демонстрации)
+
         let messages = JSON.parse(localStorage.getItem('contactMessages') || '[]');
         messages.push(formData);
         localStorage.setItem('contactMessages', JSON.stringify(messages));
-        
-        // Показать сообщение об успехе
+
         showSuccessMessage();
-        
-        // Очистить форму
+
         contactForm.reset();
         contactForm.classList.remove('was-validated');
     }, false);
-    
-    // Функция показа сообщения об успехе
+
     function showSuccessMessage() {
         const successMessage = document.getElementById('successMessage');
         if (successMessage) {
             successMessage.classList.remove('d-none');
-            
-            // Скрыть сообщение через 5 секунд
+
             setTimeout(() => {
                 successMessage.classList.add('d-none');
             }, 5000);
         }
     }
-    
-    // Валидация email в реальном времени
+
     const emailInput = document.getElementById('email');
     if (emailInput) {
         emailInput.addEventListener('blur', function() {
@@ -63,8 +54,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Валидация имени в реальном времени
+
     const nameInput = document.getElementById('name');
     if (nameInput) {
         nameInput.addEventListener('blur', function() {
@@ -75,8 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-    
-    // Валидация сообщения в реальном времени
+
     const messageInput = document.getElementById('message');
     if (messageInput) {
         messageInput.addEventListener('blur', function() {
