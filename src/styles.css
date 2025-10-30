@@ -8,7 +8,7 @@
     --light-color: #FFFFFF;
     --dark-color: #000000;
     
-    /* Цвета для светлой темы */
+    
     --bg-primary: #FFFFFF;
     --bg-secondary: #F5F5F5;
     --text-primary: #000000;
@@ -20,7 +20,7 @@
     --header-gradient-end: #FFA500;
 }
 
-/* Темная тема */
+
 html[data-bs-theme="dark"] {
     --bg-primary: #1a1a1a;
     --bg-secondary: #0a0a0a;
@@ -51,7 +51,17 @@ body {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Переопределение фоновых цветов Bootstrap */
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+main {
+    flex: 1;
+}
+
+
 .bg-light {
     background-color: var(--bg-secondary) !important;
 }
@@ -68,7 +78,7 @@ body {
     color: var(--text-secondary) !important;
 }
 
-/* Header Section */
+
 .header-section,
 header.bg-primary {
     background: linear-gradient(135deg, var(--header-gradient-start) 0%, var(--header-gradient-end) 100%) !important;
@@ -84,7 +94,7 @@ header.bg-primary {
     transform: scale(1.1);
 }
 
-/* Navbar */
+
 .navbar {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: var(--navbar-bg) !important;
@@ -180,7 +190,7 @@ html[data-bs-theme="dark"] .profile-photo {
     font-weight: bold;
 }
 
-/* Cards */
+
 .card {
     border: none !important;
     border-radius: 10px;
@@ -214,7 +224,7 @@ html[data-bs-theme="dark"] .profile-photo {
     color: var(--text-primary) !important;
 }
 
-/* Project Cards */
+
 .project-card {
     transition: all 0.3s ease;
     border: none;
@@ -307,7 +317,7 @@ html[data-bs-theme="dark"] .profile-photo {
     border-bottom: none;
 }
 
-/* Buttons */
+
 .btn {
     border-radius: 8px;
     padding: 0.5rem 1.5rem;
@@ -325,7 +335,7 @@ html[data-bs-theme="dark"] .profile-photo {
     border-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Forms */
+
 .form-control,
 .form-select {
     border-radius: 8px;
@@ -350,7 +360,7 @@ html[data-bs-theme="dark"] .profile-photo {
     color: var(--text-primary);
 }
 
-/* Modal */
+
 .modal-content {
     background-color: var(--card-bg);
     color: var(--text-primary);
@@ -373,11 +383,12 @@ html[data-bs-theme="dark"] .btn-close {
     filter: invert(1) grayscale(100%) brightness(200%);
 }
 
-/* Footer */
+
 .footer-section,
 footer.bg-dark {
     background-color: var(--dark-color) !important;
     margin-top: auto;
+    margin: 3 ;
     transition: background-color 0.3s ease;
 }
 
@@ -412,14 +423,14 @@ footer a:hover {
     animation: fadeIn 0.5s ease-out;
 }
 
-/* List Group */
+
 .list-group-item {
     background-color: var(--card-bg) !important;
     color: var(--text-primary) !important;
     border-color: var(--border-color) !important;
 }
 
-/* Alerts */
+
 .alert {
     border-radius: 8px;
     border: 1px solid var(--border-color);
@@ -435,7 +446,7 @@ html[data-bs-theme="dark"] .alert-info {
     background-color: rgba(13, 202, 240, 0.2);
 }
 
-/* Dropdown Menu */
+
 .dropdown-menu {
     background-color: var(--card-bg);
     border: 1px solid var(--border-color);
@@ -450,14 +461,14 @@ html[data-bs-theme="dark"] .alert-info {
     color: var(--primary-color);
 }
 
-/* Input Groups */
+
 .input-group-text {
     background-color: var(--bg-secondary);
     border-color: var(--border-color);
     color: var(--text-primary);
 }
 
-/* Удаляем старые стили темной темы */
+
 body.dark-theme {
     background-color: var(--bg-primary);
     color: var(--text-primary);
@@ -575,7 +586,7 @@ html {
     color: white;
 }
 
-/* Scrollbar Styling */
+
 ::-webkit-scrollbar {
     width: 10px;
 }
@@ -593,7 +604,7 @@ html {
     background: var(--primary-color);
 }
 
-/* Дополнительные стили для темной темы */
+
 html[data-bs-theme="dark"] .border {
     border-color: var(--border-color) !important;
 }
@@ -610,7 +621,7 @@ html[data-bs-theme="dark"] .border-info {
     border-color: var(--info-color) !important;
 }
 
-/* Дополнительные стили для желто-черной темы */
+
 .bg-warning {
     background-color: #FFD700 !important;
 }
@@ -639,12 +650,12 @@ html[data-bs-theme="dark"] .border-info {
     color: #FFD700 !important;
 }
 
-/* Переопределение для header */
+
 header.bg-dark {
     background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%) !important;
 }
 
-/* Акценты на желтом */
+
 .card-header[style*="FFD700"] {
     box-shadow: 0 2px 8px rgba(255, 215, 0, 0.3);
 }
@@ -654,3 +665,4 @@ header.bg-dark {
     transform: translateY(-5px);
     transition: all 0.3s ease;
 }
+

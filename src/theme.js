@@ -6,11 +6,11 @@
   function applyTheme(theme) {
     if (theme === 'dark') {
       root.setAttribute('data-bs-theme', 'dark');
-      // Обновляем иконку кнопки
+
       updateButtonIcon('moon');
     } else {
       root.setAttribute('data-bs-theme', 'light');
-      // Обновляем иконку кнопки
+
       updateButtonIcon('sun');
     }
   }
@@ -36,3 +36,4 @@
     });
   }
 })();
+
