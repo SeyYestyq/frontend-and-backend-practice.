@@ -1,6 +1,6 @@
 (function(){
   const KEY = 'site-theme';
-  const root = document.documentElement; // <html>
+  const root = document.documentElement; 
   const btn = document.getElementById('themeSwitch');
 
   function applyTheme(theme) {
